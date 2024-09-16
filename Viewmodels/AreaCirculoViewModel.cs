@@ -15,6 +15,9 @@ namespace AreaCirculoAppMvvm.Viewmodels
         [ObservableProperty]
         private double r;
 
+        [ObservableProperty]
+        private double area;
+
         private void Alerta(string Titulo, string Mensaje)
         {
             MainThread.BeginInvokeOnMainThread(async () => await App.Current!.MainPage!.DisplayAlert(Titulo, Mensaje, "Aceptar"));
@@ -27,7 +30,7 @@ namespace AreaCirculoAppMvvm.Viewmodels
         {
             try
             {
-                double areaCirculo;
+                
 
                 if (R == 0)
                 {
@@ -38,8 +41,7 @@ namespace AreaCirculoAppMvvm.Viewmodels
                 }
                 else
                 {
-                    areaCirculo = 3.1415926535897931 * (Math.Pow(R, 2));  
-
+                    Area = 3.1415926535897931 * (Math.Pow(R, 2));  
                 }
 
             }
@@ -55,8 +57,8 @@ namespace AreaCirculoAppMvvm.Viewmodels
         private void Limpiar()
         {
             R= 0;
+            Area = 0;
         }
-
 
 
 
